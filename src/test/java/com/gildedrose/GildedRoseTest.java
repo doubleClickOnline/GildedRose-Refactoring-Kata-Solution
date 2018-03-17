@@ -7,11 +7,20 @@ import org.junit.Test;
 public class GildedRoseTest {
 
 	@Test
+	public void equalsTest() {
+
+		Item item = new Item("testItem", 0, 2);
+		Item equalItem = new Item("testItem", 0, 2);
+
+		assertEquals(equalItem, item);
+	}
+
+	@Test
 	public void foo() {
 		Item[] items = new Item[] { new Item("foo", 0, 0) };
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
-		assertEquals("foo", app.items[0].name);
+		assertEquals("foo", app.items[0].getName());
 	}
 
 	@Test
@@ -55,7 +64,7 @@ public class GildedRoseTest {
 				new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
 				// this conjured item does not work properly yet
 				new Item("Conjured Mana Cake", 3, 6) };
-		
+
 		GildedRose app = new GildedRose(items);
 
 		int days = 2;
@@ -69,5 +78,5 @@ public class GildedRoseTest {
 			app.updateQuality();
 		}
 	}
-	
+
 }
