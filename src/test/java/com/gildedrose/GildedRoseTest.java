@@ -11,12 +11,12 @@ import org.junit.Test;
 
 public class GildedRoseTest {
 
-	private Item[] items;
+	private List<Item> items;
 
 	@Before
 	public void setupDummyData() {
 
-		items = new Item[] { new Item("+5 Dexterity Vest", 10, 20), //
+		items = Arrays.<Item>asList(new Item[] { new Item("+5 Dexterity Vest", 10, 20), //
 				new Item("Aged Brie", 2, 0), //
 				new Item("Elixir of the Mongoose", 5, 7), //
 				new Item("Sulfuras, Hand of Ragnaros", 0, 80), //
@@ -25,16 +25,16 @@ public class GildedRoseTest {
 				new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
 				new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
 				// this conjured item does not work properly yet
-				new Item("Conjured Mana Cake", 3, 6) };
+				new Item("Conjured Mana Cake", 3, 6) });
 	}
 
 	@Test
 	public void updateFooTest() {
 		
-		Item[] items = new Item[] { new Item("foo", 0, 0) };
+		List<Item> items = Arrays.<Item>asList(new Item[] { new Item("foo", 0, 0)});
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
-		assertEquals("foo", app.items[0].getName());
+		assertEquals("foo", app.getItems().get(0).getName());
 	
 	}
 
@@ -48,7 +48,7 @@ public class GildedRoseTest {
 			app.updateQuality();
 		}
 		
-		List<Item> results = Arrays.<Item>asList(items);
+		List<Item> results = items;
 		assertTrue(results.contains(new Item("+5 Dexterity Vest", 9, 19)));
 		assertTrue(results.contains(new Item("Aged Brie", 1, 1)));
 		assertTrue(results.contains(new Item("Elixir of the Mongoose", 4, 6)));
@@ -70,7 +70,7 @@ public class GildedRoseTest {
 			app.updateQuality();
 		}
 		
-		List<Item> results = Arrays.<Item>asList(items);
+		List<Item> results = items;
 		assertTrue(results.contains(new Item("+5 Dexterity Vest", 8, 18)));
 		assertTrue(results.contains(new Item("Aged Brie", 0, 2)));
 		assertTrue(results.contains(new Item("Elixir of the Mongoose", 3, 5)));
