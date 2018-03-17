@@ -7,15 +7,6 @@ import org.junit.Test;
 public class GildedRoseTest {
 
 	@Test
-	public void equalsTest() {
-
-		Item item = new Item("testItem", 0, 2);
-		Item equalItem = new Item("testItem", 0, 2);
-
-		assertEquals(equalItem, item);
-	}
-
-	@Test
 	public void foo() {
 		Item[] items = new Item[] { new Item("foo", 0, 0) };
 		GildedRose app = new GildedRose(items);
@@ -78,5 +69,5 @@ public class GildedRoseTest {
 			app.updateQuality();
 		}
 	}
-
+	
 }
