@@ -21,43 +21,62 @@ class GildedRose {
 
 	public void updateQuality(Item item) {
 
-		if (!item.getName().equals("Aged Brie") && !item.getName().equals("Backstage passes to a TAFKAL80ETC concert")
-			&& !item.getName().equals("Sulfuras, Hand of Ragnaros") && item.getQuality() > 0) {
-				item.setQuality(item.getQuality() - 1);
+		if (!item.getName().equals("Aged Brie") 
+			&& !item.getName().equals("Backstage passes to a TAFKAL80ETC concert")
+			&& !item.getName().equals("Sulfuras, Hand of Ragnaros") 
+			&& item.getQuality() > 0) {
+				decreaseQuality(item);
 		} else {
 			if (item.getQuality() < 50) {
-				item.setQuality(item.getQuality() + 1);
+				increaseQuality(item);
 
 				if (item.getName().equals("Backstage passes to a TAFKAL80ETC concert") && item.getQuality() < 50) {
 
 					if (item.getSellIn() < 11) {
-						item.setQuality(item.getQuality() + 1);
+						increaseQuality(item);
 					}
 					if (item.getSellIn() < 6) {
-						item.setQuality(item.getQuality() + 1);
+						increaseQuality(item);
 					}
 				}
 			}
 		}
 
 		if (!item.getName().equals("Sulfuras, Hand of Ragnaros")) {
-			item.setSellIn(item.getSellIn() - 1);
+			decreaseSellIn(item);
 		}
 
 		if (item.getSellIn() < 0) {
 			if (!item.getName().equals("Aged Brie")) {
 				if (!item.getName().equals("Backstage passes to a TAFKAL80ETC concert")) {
 					if (item.getQuality() > 0 && !item.getName().equals("Sulfuras, Hand of Ragnaros")) {
-						item.setQuality(item.getQuality() - 1);
+						decreaseQuality(item);
 					}
 				} else {
-					item.setQuality(0);
+					resetQuality(item);
 				}
 			} else {
 				if (item.getQuality() < 50) {
-					item.setQuality(item.getQuality() + 1);
+					increaseQuality(item);
 				}
 			}
 		}
 	}
+	
+	public void resetQuality(Item item) {
+		item.setQuality(0);
+	}
+	
+	public void decreaseQuality(Item item) {
+		item.setQuality(item.getQuality() - 1);
+	}
+	
+	public void increaseQuality(Item item) {
+		item.setQuality(item.getQuality() + 1);
+	}
+	
+	public void decreaseSellIn(Item item) {
+		item.setSellIn(item.getSellIn() - 1);
+	}
+	
 }
