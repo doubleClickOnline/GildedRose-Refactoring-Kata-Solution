@@ -12,11 +12,11 @@ public class BackstagePassesTAFKAL80ETConcert extends ItemWrapper {
 	public void updateQuality() {
 		increaseQuality();
 
-		if (getSellIn() < 6) {
+		if (getSellIn() < 11) {
 			increaseQuality();
-			increaseQuality();
-		} else if (getSellIn() < 11) {
-			increaseQuality();
+			if (getSellIn() < 6) {
+				increaseQuality();
+			}
 		}
 		
 		if (getSellIn() < 0 && getQuality() < 50) {
