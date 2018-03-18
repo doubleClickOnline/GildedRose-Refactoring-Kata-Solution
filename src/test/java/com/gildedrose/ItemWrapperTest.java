@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import com.gildedrose.items.ItemWrapper;
 
-public class ItemTest {
+public class ItemWrapperTest {
 	
 	@Test
 	public void equalsItemsTest() {
