@@ -47,11 +47,7 @@ public class GildedRoseTest {
 	public void updateAfterOneDayTest() {
 
 		GildedRose app = new GildedRose(items);
-
-		int days = 1;
-		for (int i = 0; i < days; i++) {
-			app.updateQuality();
-		}
+		app.updateQuality();
 		
 		List<Item> results = items;
 		assertTrue(results.contains(new Item("+5 Dexterity Vest", 9, 19)));
