@@ -2,17 +2,17 @@ package com.gildedrose;
 
 import java.util.List;
 
-import com.gildedrose.items.types.Item;
+import com.gildedrose.items.ItemWrapper;
 
 class GildedRose {
 
-	private List<Item> items;
+	private List<ItemWrapper> items;
 
-	public GildedRose(List<Item> items) {
+	public GildedRose(List<ItemWrapper> items) {
 		this.items = items;
 	}
 
-	public List<Item> getItems() {
+	public List<ItemWrapper> getItems() {
 		return items;
 	}
 
@@ -21,7 +21,7 @@ class GildedRose {
 		items.stream().forEach(item -> update(item));
 	}
 
-	public void update(Item item) {
+	public void update(ItemWrapper item) {
 		
 		item.updateSellIn();
 		item.updateQuality();

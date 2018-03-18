@@ -9,19 +9,19 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.gildedrose.items.ItemFactory;
-import com.gildedrose.items.types.Item;
+import com.gildedrose.items.ItemWrapperFactory;
+import com.gildedrose.items.ItemWrapper;
 
 public class GildedRoseTest {
 
-	private List<Item> items;
+	private List<ItemWrapper> items;
 
 	@Before
 	public void setupDummyData() {
 
-		ItemFactory factory = new ItemFactory();
+		ItemWrapperFactory factory = new ItemWrapperFactory();
 
-		items = Arrays.<Item>asList(new Item[] { factory.create("+5 Dexterity Vest", 10, 20), //
+		items = Arrays.<ItemWrapper>asList(new ItemWrapper[] { factory.create("+5 Dexterity Vest", 10, 20), //
 			factory.create("Aged Brie", 2, 0), //
 			factory.create("Aged Brie", -5, 10), //
 			factory.create("Aged Brie", -5, 100), //
@@ -40,7 +40,7 @@ public class GildedRoseTest {
 	@Test
 	public void updateFooTest() {
 
-		List<Item> items = Arrays.<Item>asList(new Item[] { new Item("foo", 0, 0) });
+		List<ItemWrapper> items = Arrays.<ItemWrapper>asList(new ItemWrapper[] { new ItemWrapper("foo", 0, 0) });
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
 		assertEquals("foo", app.getItems().get(0).getName());
@@ -53,21 +53,21 @@ public class GildedRoseTest {
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
 
-		List<Item> results = items;
-		assertTrue(results.contains(new Item("+5 Dexterity Vest", 9, 19)));
-		assertTrue(results.contains(new Item("Aged Brie", 1, 1)));
-		assertTrue(results.contains(new Item("Aged Brie", -6, 12)));
-		assertTrue(results.contains(new Item("Aged Brie", -6, 100)));
-		assertTrue(results.contains(new Item("Elixir of the Mongoose", 4, 6)));
-		assertTrue(results.contains(new Item("Elixir of the Mongoose", -6, 8)));
-		assertTrue(results.contains(new Item("Sulfuras, Hand of Ragnaros", 0, 80)));
-		assertTrue(results.contains(new Item("Sulfuras, Hand of Ragnaros", -1, 80)));
-		assertTrue(results.contains(new Item("Backstage passes to a TAFKAL80ETC concert", 14, 21)));
-		assertTrue(results.contains(new Item("Backstage passes to a TAFKAL80ETC concert", 9, 50)));
-		assertTrue(results.contains(new Item("Backstage passes to a TAFKAL80ETC concert", 4, 50)));
-		assertTrue(results.contains(new Item("Backstage passes to a TAFKAL80ETC concert", 4, 48)));
-		assertTrue(results.contains(new Item("Backstage passes to a TAFKAL80ETC concert", -16, 0)));
-		assertTrue(results.contains(new Item("Conjured Mana Cake", 2, 5)));
+		List<ItemWrapper> results = items;
+		assertTrue(results.contains(new ItemWrapper("+5 Dexterity Vest", 9, 19)));
+		assertTrue(results.contains(new ItemWrapper("Aged Brie", 1, 1)));
+		assertTrue(results.contains(new ItemWrapper("Aged Brie", -6, 12)));
+		assertTrue(results.contains(new ItemWrapper("Aged Brie", -6, 100)));
+		assertTrue(results.contains(new ItemWrapper("Elixir of the Mongoose", 4, 6)));
+		assertTrue(results.contains(new ItemWrapper("Elixir of the Mongoose", -6, 8)));
+		assertTrue(results.contains(new ItemWrapper("Sulfuras, Hand of Ragnaros", 0, 80)));
+		assertTrue(results.contains(new ItemWrapper("Sulfuras, Hand of Ragnaros", -1, 80)));
+		assertTrue(results.contains(new ItemWrapper("Backstage passes to a TAFKAL80ETC concert", 14, 21)));
+		assertTrue(results.contains(new ItemWrapper("Backstage passes to a TAFKAL80ETC concert", 9, 50)));
+		assertTrue(results.contains(new ItemWrapper("Backstage passes to a TAFKAL80ETC concert", 4, 50)));
+		assertTrue(results.contains(new ItemWrapper("Backstage passes to a TAFKAL80ETC concert", 4, 48)));
+		assertTrue(results.contains(new ItemWrapper("Backstage passes to a TAFKAL80ETC concert", -16, 0)));
+		assertTrue(results.contains(new ItemWrapper("Conjured Mana Cake", 2, 5)));
 	}
 
 	@Test
@@ -80,20 +80,20 @@ public class GildedRoseTest {
 			app.updateQuality();
 		}
 
-		List<Item> results = items;
-		assertTrue(results.contains(new Item("+5 Dexterity Vest", 8, 18)));
-		assertTrue(results.contains(new Item("Aged Brie", 0, 2)));
-		assertTrue(results.contains(new Item("Aged Brie", -7, 14)));
-		assertTrue(results.contains(new Item("Aged Brie", 0, 2)));
-		assertTrue(results.contains(new Item("Elixir of the Mongoose", 3, 5)));
-		assertTrue(results.contains(new Item("Elixir of the Mongoose", -7, 6)));
-		assertTrue(results.contains(new Item("Sulfuras, Hand of Ragnaros", 0, 80)));
-		assertTrue(results.contains(new Item("Sulfuras, Hand of Ragnaros", -1, 80)));
-		assertTrue(results.contains(new Item("Backstage passes to a TAFKAL80ETC concert", 13, 22)));
-		assertTrue(results.contains(new Item("Backstage passes to a TAFKAL80ETC concert", 8, 50)));
-		assertTrue(results.contains(new Item("Backstage passes to a TAFKAL80ETC concert", 3, 50)));
-		assertTrue(results.contains(new Item("Backstage passes to a TAFKAL80ETC concert", 3, 50)));
-		assertTrue(results.contains(new Item("Conjured Mana Cake", 1, 4)));
+		List<ItemWrapper> results = items;
+		assertTrue(results.contains(new ItemWrapper("+5 Dexterity Vest", 8, 18)));
+		assertTrue(results.contains(new ItemWrapper("Aged Brie", 0, 2)));
+		assertTrue(results.contains(new ItemWrapper("Aged Brie", -7, 14)));
+		assertTrue(results.contains(new ItemWrapper("Aged Brie", 0, 2)));
+		assertTrue(results.contains(new ItemWrapper("Elixir of the Mongoose", 3, 5)));
+		assertTrue(results.contains(new ItemWrapper("Elixir of the Mongoose", -7, 6)));
+		assertTrue(results.contains(new ItemWrapper("Sulfuras, Hand of Ragnaros", 0, 80)));
+		assertTrue(results.contains(new ItemWrapper("Sulfuras, Hand of Ragnaros", -1, 80)));
+		assertTrue(results.contains(new ItemWrapper("Backstage passes to a TAFKAL80ETC concert", 13, 22)));
+		assertTrue(results.contains(new ItemWrapper("Backstage passes to a TAFKAL80ETC concert", 8, 50)));
+		assertTrue(results.contains(new ItemWrapper("Backstage passes to a TAFKAL80ETC concert", 3, 50)));
+		assertTrue(results.contains(new ItemWrapper("Backstage passes to a TAFKAL80ETC concert", 3, 50)));
+		assertTrue(results.contains(new ItemWrapper("Conjured Mana Cake", 1, 4)));
 	}
 
 }

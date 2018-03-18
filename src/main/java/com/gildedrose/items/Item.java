@@ -1,4 +1,4 @@
-package com.gildedrose.items.types;
+package com.gildedrose.items;
 
 public class Item {
 
@@ -13,7 +13,7 @@ public class Item {
 		this.sellIn = sellIn;
 		this.quality = quality;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -42,45 +42,17 @@ public class Item {
 	public String toString() {
 		return this.name + ", " + this.sellIn + ", " + this.quality;
 	}
-	
-	public void updateQuality() {
 
-		if (getQuality() > 0) {
-			decreaseQuality();
-
-			if (getSellIn() < 0) {
-				decreaseQuality();
-			}
-		}
-	}
-	
-	public void updateSellIn() {
-		decreaseSellIn();
-	}
-	
-	void decreaseQuality() {
-		quality--;
-	}
-
-	void increaseQuality() {
-		quality++;
-	}
-
-	void decreaseSellIn() {
-		sellIn--;
-	}
-	
 	@Override
 	public boolean equals(Object obj) {
-		
-		if (obj instanceof Item) {
-			if (((Item) obj).name.equals(name) && 
-					((Item) obj).sellIn == sellIn &&
-							((Item) obj).quality == quality) {
+
+		if (obj instanceof ItemWrapper) {
+			if (((ItemWrapper) obj).getName().equals(name) && ((ItemWrapper) obj).getSellIn() == sellIn
+					&& ((ItemWrapper) obj).getQuality() == quality) {
 				return true;
 			}
 		}
-		
+
 		// default
 		return false;
 	}

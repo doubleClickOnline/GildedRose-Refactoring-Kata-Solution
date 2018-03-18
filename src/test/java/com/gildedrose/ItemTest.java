@@ -5,23 +5,23 @@ import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
-import com.gildedrose.items.types.Item;
+import com.gildedrose.items.ItemWrapper;
 
 public class ItemTest {
 	
 	@Test
 	public void equalsItemsTest() {
 
-		Item item = new Item("testItem", 0, 2);
-		Item equalItem = new Item("testItem", 0, 2);
+		ItemWrapper item = new ItemWrapper("testItem", 0, 2);
+		ItemWrapper equalItem = new ItemWrapper("testItem", 0, 2);
 		assertEquals(equalItem, item);
 	}
 	
 	@Test
 	public void notEqualsItemsTest() {
 
-		Item item = new Item("testItem", 0, 2);
-		Item notEqualItem = new Item("testItem", 0, 3);
+		ItemWrapper item = new ItemWrapper("testItem", 0, 2);
+		ItemWrapper notEqualItem = new ItemWrapper("testItem", 0, 3);
 		assertNotEquals(notEqualItem, item);
 	}
 
