@@ -2,6 +2,8 @@ package com.gildedrose;
 
 import java.util.List;
 
+import com.gildedrose.items.types.Item;
+
 class GildedRose {
 
 	private List<Item> items;
@@ -16,78 +18,12 @@ class GildedRose {
 
 	public void updateQuality() {
 
-		items.forEach(item -> update(item));
+		items.stream().forEach(item -> update(item));
 	}
 
 	public void update(Item item) {
-
-		if (!item.getName().equals("Aged Brie") && !item.getName().equals("Backstage passes to a TAFKAL80ETC concert")
-				&& !item.getName().equals("Sulfuras, Hand of Ragnaros")) {
-			
-			decreaseSellIn(item);
-			
-			if (item.getQuality() > 0) {
-				decreaseQuality(item);
-	
-				if (item.getSellIn() < 0) {
-					decreaseQuality(item);
-				}
-			}
-		}
-
-		if (item.getName().equals("Sulfuras, Hand of Ragnaros")) {
-			if (item.getQuality() < 50) {
-				increaseQuality(item);
-			}
-		}
-
-		if (item.getName().equals("Backstage passes to a TAFKAL80ETC concert")) {
-
-			decreaseSellIn(item);
-			
-			if (item.getQuality() < 50) {
-				increaseQuality(item);
-
-				if (item.getSellIn() < 11 && item.getQuality() < 50) {
-					increaseQuality(item);
-				}
-				if (item.getSellIn() < 6 && item.getQuality() < 50) {
-					increaseQuality(item);
-				}
-				if (item.getSellIn() < 0 && item.getQuality() < 50) {
-					resetQuality(item);
-				}
-			}
-		}
-
-		if (item.getName().equals("Aged Brie")) {
-
-			decreaseSellIn(item);
-			
-			if (item.getQuality() < 50) {
-				increaseQuality(item);
-
-				if (item.getSellIn() < 0) {
-					increaseQuality(item);
-				}
-			}
-		}
+		
+		item.updateSellIn();
+		item.updateQuality();
 	}
-
-	public void resetQuality(Item item) {
-		item.setQuality(0);
-	}
-
-	public void decreaseQuality(Item item) {
-		item.setQuality(item.getQuality() - 1);
-	}
-
-	public void increaseQuality(Item item) {
-		item.setQuality(item.getQuality() + 1);
-	}
-
-	public void decreaseSellIn(Item item) {
-		item.setSellIn(item.getSellIn() - 1);
-	}
-
 }

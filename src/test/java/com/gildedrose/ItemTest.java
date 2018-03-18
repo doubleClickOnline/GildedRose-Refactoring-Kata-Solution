@@ -5,6 +5,8 @@ import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
+import com.gildedrose.items.types.Item;
+
 public class ItemTest {
 	
 	@Test

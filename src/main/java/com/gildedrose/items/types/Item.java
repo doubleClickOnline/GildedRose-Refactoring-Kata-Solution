@@ -1,4 +1,4 @@
-package com.gildedrose;
+package com.gildedrose.items.types;
 
 public class Item {
 
@@ -41,6 +41,33 @@ public class Item {
 	@Override
 	public String toString() {
 		return this.name + ", " + this.sellIn + ", " + this.quality;
+	}
+	
+	public void updateQuality() {
+
+		if (getQuality() > 0) {
+			decreaseQuality();
+
+			if (getSellIn() < 0) {
+				decreaseQuality();
+			}
+		}
+	}
+	
+	public void updateSellIn() {
+		decreaseSellIn();
+	}
+	
+	void decreaseQuality() {
+		quality--;
+	}
+
+	void increaseQuality() {
+		quality++;
+	}
+
+	void decreaseSellIn() {
+		sellIn--;
 	}
 	
 	@Override

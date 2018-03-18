@@ -9,6 +9,9 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.gildedrose.items.ItemFactory;
+import com.gildedrose.items.types.Item;
+
 public class GildedRoseTest {
 
 	private List<Item> items;
@@ -16,31 +19,32 @@ public class GildedRoseTest {
 	@Before
 	public void setupDummyData() {
 
-		items = Arrays.<Item>asList(new Item[] { new Item("+5 Dexterity Vest", 10, 20), //
-				new Item("Aged Brie", 2, 0), //
-				new Item("Aged Brie", -5, 10), //
-				new Item("Aged Brie", -5, 100), //
-				new Item("Elixir of the Mongoose", 5, 7), //
-				new Item("Elixir of the Mongoose", -5, 10),
-				new Item("Sulfuras, Hand of Ragnaros", 0, 80), //
-				new Item("Sulfuras, Hand of Ragnaros", -1, 80),
-				new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-				new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-				new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
-				new Item("Backstage passes to a TAFKAL80ETC concert", 5, 45),
-				new Item("Backstage passes to a TAFKAL80ETC concert", -15, 30),
-				// this conjured item does not work properly yet
-				new Item("Conjured Mana Cake", 3, 6) });
+		ItemFactory factory = new ItemFactory();
+
+		items = Arrays.<Item>asList(new Item[] { factory.create("+5 Dexterity Vest", 10, 20), //
+			factory.create("Aged Brie", 2, 0), //
+			factory.create("Aged Brie", -5, 10), //
+			factory.create("Aged Brie", -5, 100), //
+			factory.create("Elixir of the Mongoose", 5, 7), //
+			factory.create("Elixir of the Mongoose", -5, 10), 
+			factory.create("Sulfuras, Hand of Ragnaros", 0, 80), //
+			factory.create("Sulfuras, Hand of Ragnaros", -1, 80),
+			factory.create("Backstage passes to a TAFKAL80ETC concert", 15, 20),
+			factory.create("Backstage passes to a TAFKAL80ETC concert", 10, 49),
+			factory.create("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+			factory.create("Backstage passes to a TAFKAL80ETC concert", 5, 45),
+			factory.create("Backstage passes to a TAFKAL80ETC concert", -15, 30),
+			factory.create("Conjured Mana Cake", 3, 6) });
 	}
 
 	@Test
 	public void updateFooTest() {
-		
-		List<Item> items = Arrays.<Item>asList(new Item[] { new Item("foo", 0, 0)});
+
+		List<Item> items = Arrays.<Item>asList(new Item[] { new Item("foo", 0, 0) });
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
 		assertEquals("foo", app.getItems().get(0).getName());
-	
+
 	}
 
 	@Test
@@ -48,7 +52,7 @@ public class GildedRoseTest {
 
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
-		
+
 		List<Item> results = items;
 		assertTrue(results.contains(new Item("+5 Dexterity Vest", 9, 19)));
 		assertTrue(results.contains(new Item("Aged Brie", 1, 1)));
@@ -75,7 +79,7 @@ public class GildedRoseTest {
 		for (int i = 0; i < days; i++) {
 			app.updateQuality();
 		}
-		
+
 		List<Item> results = items;
 		assertTrue(results.contains(new Item("+5 Dexterity Vest", 8, 18)));
 		assertTrue(results.contains(new Item("Aged Brie", 0, 2)));
