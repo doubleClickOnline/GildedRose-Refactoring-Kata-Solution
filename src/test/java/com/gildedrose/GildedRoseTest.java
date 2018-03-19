@@ -9,8 +9,8 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.gildedrose.items.ItemWrapperFactory;
-import com.gildedrose.items.ItemWrapper;
+import com.gildedrose.itemwrapper.types.ItemWrapper;
+import com.gildedrose.itemwrapper.types.ItemWrapperFactory;
 
 public class GildedRoseTest {
 

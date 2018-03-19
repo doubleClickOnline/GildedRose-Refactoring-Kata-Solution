@@ -2,7 +2,7 @@ package com.gildedrose;
 
 import java.util.List;
 
-import com.gildedrose.items.ItemWrapper;
+import com.gildedrose.itemwrapper.types.ItemWrapper;
 
 class GildedRose {
 

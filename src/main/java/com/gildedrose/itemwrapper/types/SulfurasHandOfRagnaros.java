@@ -1,6 +1,4 @@
-package com.gildedrose.items.types;
-
-import com.gildedrose.items.ItemWrapper;
+package com.gildedrose.itemwrapper.types;
 
 public class SulfurasHandOfRagnaros extends ItemWrapper {
 

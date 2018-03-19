@@ -1,8 +1,4 @@
-package com.gildedrose.items;
-
-import com.gildedrose.items.types.AgedBrie;
-import com.gildedrose.items.types.BackstagePassesTAFKAL80ETConcert;
-import com.gildedrose.items.types.SulfurasHandOfRagnaros;
+package com.gildedrose.itemwrapper.types;
 
 public class ItemWrapperFactory {
 

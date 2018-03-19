@@ -5,7 +5,7 @@ import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
-import com.gildedrose.items.ItemWrapper;
+import com.gildedrose.itemwrapper.types.ItemWrapper;
 
 public class ItemWrapperTest {
 	

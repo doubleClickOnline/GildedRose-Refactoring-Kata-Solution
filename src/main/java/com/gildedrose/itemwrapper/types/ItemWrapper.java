@@ -1,4 +1,6 @@
-package com.gildedrose.items;
+package com.gildedrose.itemwrapper.types;
+
+import com.gildedrose.Item;
 
 public class ItemWrapper {
 
