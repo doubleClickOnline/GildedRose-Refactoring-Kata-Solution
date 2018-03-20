@@ -1,7 +1,5 @@
 package com.gildedrose;
 
-import com.gildedrose.itemwrapper.types.ItemWrapper;
-
 public class Item {
 
 	private String name;
@@ -48,9 +46,9 @@ public class Item {
 	@Override
 	public boolean equals(Object obj) {
 
-		if (obj instanceof ItemWrapper) {
-			if (((ItemWrapper) obj).getName().equals(name) && ((ItemWrapper) obj).getSellIn() == sellIn
-					&& ((ItemWrapper) obj).getQuality() == quality) {
+		if (obj instanceof Item) {
+			if (((Item) obj).getName().equals(name) && ((Item) obj).getSellIn() == sellIn
+					&& ((Item) obj).getQuality() == quality) {
 				return true;
 			}
 		}

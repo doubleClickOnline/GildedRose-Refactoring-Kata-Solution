@@ -9,7 +9,7 @@ public class ItemWrapper {
 	public ItemWrapper(String name, int sellIn, int quality) {
 		this.item = new Item(name, sellIn, quality);
 	}
-	
+
 	public String getName() {
 		return item.getName();
 	}
@@ -38,7 +38,7 @@ public class ItemWrapper {
 	public String toString() {
 		return item.toString();
 	}
-	
+
 	public void updateQuality() {
 
 		decreaseQuality();
@@ -46,11 +46,11 @@ public class ItemWrapper {
 			decreaseQuality();
 		}
 	}
-	
+
 	public void updateSellIn() {
 		decreaseSellIn();
 	}
-	
+
 	public void decreaseQuality() {
 		if (getQuality() > 0) {
 			item.setQuality(item.getQuality() - 1);
@@ -64,13 +64,22 @@ public class ItemWrapper {
 	public void decreaseSellIn() {
 		item.setSellIn(getSellIn() - 1);
 	}
-	
+
 	public void increaseSellIn() {
 		item.setSellIn(item.getSellIn() + 1);
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
-		return item.equals(obj);
+
+		if (obj instanceof ItemWrapper) {
+			if (item.getName().equalsIgnoreCase((((ItemWrapper) obj).getName()))
+					&& (item.getSellIn() == ((ItemWrapper) obj).getSellIn())
+					&& (item.getQuality() == ((ItemWrapper) obj).getQuality())) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 }
