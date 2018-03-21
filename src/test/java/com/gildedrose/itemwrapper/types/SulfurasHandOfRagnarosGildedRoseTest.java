@@ -1,4 +1,4 @@
-package com.gildedrose;
+package com.gildedrose.itemwrapper.types;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.gildedrose;
+package com.gildedrose.itemwrapper.types;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;

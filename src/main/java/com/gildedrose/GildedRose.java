@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.gildedrose.itemwrapper.types.ItemWrapper;
 
-class GildedRose {
+public class GildedRose {
 
 	private List<ItemWrapper> items;
 
