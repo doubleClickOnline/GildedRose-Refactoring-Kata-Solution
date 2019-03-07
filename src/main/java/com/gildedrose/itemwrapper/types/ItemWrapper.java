@@ -1,42 +1,44 @@
 package com.gildedrose.itemwrapper.types;
 
-import com.gildedrose.Item;
-
 public class ItemWrapper {
 
-  private Item item;
+  private String name;
+  private int sellIn;
+  private int quality;
 
   public ItemWrapper(String name, int sellIn, int quality) {
-    this.item = new Item(name, sellIn, quality);
+    this.name = name;
+    this.sellIn = sellIn;
+    this.quality = quality;
   }
 
   public String getName() {
-    return item.getName();
+    return name;
   }
 
   public void setName(String name) {
-    item.setName(name);
+    this.name = name;
   }
 
   public int getSellIn() {
-    return item.getSellIn();
+    return sellIn;
   }
 
   public void setSellIn(int sellIn) {
-    item.setSellIn(sellIn);
+    this.sellIn = sellIn;
   }
 
   public int getQuality() {
-    return item.getQuality();
+    return quality;
   }
 
   public void setQuality(int quality) {
-    item.setQuality(quality);
+    this.quality = quality;
   }
 
   @Override
   public String toString() {
-    return item.toString();
+    return this.name + ", " + this.sellIn + ", " + this.quality;
   }
 
   public void updateQuality() {
@@ -52,32 +54,38 @@ public class ItemWrapper {
   }
 
   public void decreaseQuality() {
-    if (getQuality() > 0) {
-      item.setQuality(item.getQuality() - 1);
+    if (quality > 0) {
+      setQuality(getQuality() - 1);
     }
   }
 
   public void increaseQuality() {
-    item.setQuality(item.getQuality() + 1);
+    setQuality(getQuality() + 1);
   }
 
   public void decreaseSellIn() {
-    item.setSellIn(getSellIn() - 1);
+    setSellIn(getSellIn() - 1);
   }
 
   public void increaseSellIn() {
-    item.setSellIn(item.getSellIn() + 1);
+    setSellIn(getSellIn() + 1);
+  }
+
+  @Override
+  public int hashCode() {
+    return getName().hashCode()
+        + Integer.valueOf(getSellIn()).hashCode()
+        + Integer.valueOf(getQuality()).hashCode();
   }
 
   @Override
   public boolean equals(Object obj) {
 
-    if (obj instanceof ItemWrapper) {
-      if (item.getName().equalsIgnoreCase((((ItemWrapper) obj).getName()))
-          && (item.getSellIn() == ((ItemWrapper) obj).getSellIn())
-          && (item.getQuality() == ((ItemWrapper) obj).getQuality())) {
-        return true;
-      }
+    if (obj instanceof ItemWrapper
+        && getName().equalsIgnoreCase((((ItemWrapper) obj).getName()))
+        && (getSellIn() == ((ItemWrapper) obj).getSellIn())
+        && (getQuality() == ((ItemWrapper) obj).getQuality())) {
+      return true;
     }
 
     return false;

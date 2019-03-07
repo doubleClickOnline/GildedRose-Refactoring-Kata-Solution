@@ -17,12 +17,9 @@ public class GildedRose {
 
   public void updateQuality() {
 
-    items.stream().forEach(item -> update(item));
-  }
-
-  public void update(ItemWrapper item) {
-
-    item.updateSellIn();
-    item.updateQuality();
+    items.stream().forEach(item -> {
+      item.updateSellIn();
+      item.updateQuality();
+    });
   }
 }

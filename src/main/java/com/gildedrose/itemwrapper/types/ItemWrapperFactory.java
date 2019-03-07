@@ -10,7 +10,8 @@ public class ItemWrapperFactory {
         return new SulfurasHandOfRagnaros(name, sellIn, quality);
       case "Backstage passes to a TAFKAL80ETC concert":
         return new BackstagePassesTAFKAL80ETConcert(name, sellIn, quality);
+      default:
+        return new ItemWrapper(name, sellIn, quality);
     }
-    return new ItemWrapper(name, sellIn, quality);
   }
 }

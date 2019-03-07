@@ -15,5 +15,6 @@ public class SulfurasHandOfRagnaros extends ItemWrapper {
 
   @Override
   public void updateSellIn() {
+    // There shouldn't be any updateSellIn for SulfurasHandOfRagnaros
   }
 }
