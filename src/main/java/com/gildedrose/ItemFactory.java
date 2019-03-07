@@ -1,8 +1,12 @@
-package com.gildedrose.itemwrapper.types;
+package com.gildedrose;
 
-public class ItemWrapperFactory {
+import com.gildedrose.item.types.AgedBrie;
+import com.gildedrose.item.types.BackstagePassesTAFKAL80ETConcert;
+import com.gildedrose.item.types.SulfurasHandOfRagnaros;
 
-  public ItemWrapper create(String name, int sellIn, int quality) {
+public class ItemFactory {
+
+  public Item create(String name, int sellIn, int quality) {
     switch (name) {
       case "Aged Brie":
         return new AgedBrie(name, sellIn, quality);
@@ -11,7 +15,7 @@ public class ItemWrapperFactory {
       case "Backstage passes to a TAFKAL80ETC concert":
         return new BackstagePassesTAFKAL80ETConcert(name, sellIn, quality);
       default:
-        return new ItemWrapper(name, sellIn, quality);
+        return new Item(name, sellIn, quality);
     }
   }
 }

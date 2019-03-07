@@ -1,17 +1,16 @@
 package com.gildedrose;
 
-import com.gildedrose.itemwrapper.types.ItemWrapper;
 import java.util.List;
 
 public class GildedRose {
 
-  private List<ItemWrapper> items;
+  private List<Item> items;
 
-  public GildedRose(List<ItemWrapper> items) {
+  public GildedRose(List<Item> items) {
     this.items = items;
   }
 
-  public List<ItemWrapper> getItems() {
+  public List<Item> getItems() {
     return items;
   }
 

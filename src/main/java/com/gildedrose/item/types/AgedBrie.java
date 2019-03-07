@@ -1,6 +1,8 @@
-package com.gildedrose.itemwrapper.types;
+package com.gildedrose.item.types;
 
-public class AgedBrie extends ItemWrapper {
+import com.gildedrose.Item;
+
+public class AgedBrie extends Item {
 
   public AgedBrie(String name, int sellIn, int quality) {
     super(name, sellIn, quality);

@@ -1,12 +1,12 @@
-package com.gildedrose.itemwrapper.types;
+package com.gildedrose;
 
-public class ItemWrapper {
+public class Item {
 
   private String name;
   private int sellIn;
   private int quality;
 
-  public ItemWrapper(String name, int sellIn, int quality) {
+  public Item(String name, int sellIn, int quality) {
     this.name = name;
     this.sellIn = sellIn;
     this.quality = quality;
@@ -81,10 +81,10 @@ public class ItemWrapper {
   @Override
   public boolean equals(Object obj) {
 
-    if (obj instanceof ItemWrapper
-        && getName().equalsIgnoreCase((((ItemWrapper) obj).getName()))
-        && (getSellIn() == ((ItemWrapper) obj).getSellIn())
-        && (getQuality() == ((ItemWrapper) obj).getQuality())) {
+    if (obj instanceof Item
+        && getName().equalsIgnoreCase((((Item) obj).getName()))
+        && (getSellIn() == ((Item) obj).getSellIn())
+        && (getQuality() == ((Item) obj).getQuality())) {
       return true;
     }
 
