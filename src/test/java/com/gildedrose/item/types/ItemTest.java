@@ -9,6 +9,20 @@ import org.junit.Test;
 public class ItemTest {
 
   @Test
+  public void hashCodeTest() {
+    Item item = new Item("testItem", 0, 2);
+    Item equalItem = new Item("testItem", 0, 2);
+    assertEquals(equalItem.hashCode(), item.hashCode());
+  }
+
+  @Test
+  public void notEqualHashCodeTest() {
+    Item item = new Item("testItem", 0, 3);
+    Item equalItem = new Item("testItem", 0, 2);
+    assertNotEquals(equalItem.hashCode(), item.hashCode());
+  }
+
+  @Test
   public void equalsItemsTest() {
 
     Item item = new Item("testItem", 0, 2);
