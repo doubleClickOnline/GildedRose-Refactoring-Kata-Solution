@@ -1,172 +1,168 @@
 package com.gildedrose.itemwrapper.types;
 
+import com.gildedrose.GildedRose;
 import java.util.LinkedList;
 import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.gildedrose.GildedRose;
-import com.gildedrose.itemwrapper.types.ItemWrapper;
-import com.gildedrose.itemwrapper.types.ItemWrapperFactory;
-
 public class BackstagePassesToTAFKAL80ETCConcertGildedRoseTest {
 
-	private ItemWrapperFactory factory = new ItemWrapperFactory();
-	
-	@Test
-	public void updateQualityBackstagePassesToTAFKAL80ETCConcert1Test() {
+  private ItemWrapperFactory factory = new ItemWrapperFactory();
 
-		List<ItemWrapper> items = new LinkedList<ItemWrapper>();
-		items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", 15, 20));
+  @Test
+  public void updateQualityBackstagePassesToTAFKAL80ETCConcert1Test() {
 
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		ItemWrapper updatedItem = app.getItems().get(0);
+    List<ItemWrapper> items = new LinkedList<ItemWrapper>();
+    items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", 15, 20));
 
-		Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
-		Assert.assertEquals(14, updatedItem.getSellIn());
-		Assert.assertEquals(21, updatedItem.getQuality());
-	}
+    GildedRose app = new GildedRose(items);
+    app.updateQuality();
+    ItemWrapper updatedItem = app.getItems().get(0);
 
-	@Test
-	public void updateQualityBackstagePassesToTAFKAL80ETCConcert2Test() {
+    Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
+    Assert.assertEquals(14, updatedItem.getSellIn());
+    Assert.assertEquals(21, updatedItem.getQuality());
+  }
 
-		List<ItemWrapper> items = new LinkedList<ItemWrapper>();
-		items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", 10, 49));
+  @Test
+  public void updateQualityBackstagePassesToTAFKAL80ETCConcert2Test() {
 
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		ItemWrapper updatedItem = app.getItems().get(0);
+    List<ItemWrapper> items = new LinkedList<ItemWrapper>();
+    items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", 10, 49));
 
-		Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
-		Assert.assertEquals(9, updatedItem.getSellIn());
-		Assert.assertEquals(50, updatedItem.getQuality());
-	}
+    GildedRose app = new GildedRose(items);
+    app.updateQuality();
+    ItemWrapper updatedItem = app.getItems().get(0);
 
-	@Test
-	public void updateQualityBackstagePassesToTAFKAL80ETCConcert3Test() {
+    Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
+    Assert.assertEquals(9, updatedItem.getSellIn());
+    Assert.assertEquals(50, updatedItem.getQuality());
+  }
 
-		List<ItemWrapper> items = new LinkedList<ItemWrapper>();
-		items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", 5, 49));
+  @Test
+  public void updateQualityBackstagePassesToTAFKAL80ETCConcert3Test() {
 
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		ItemWrapper updatedItem = app.getItems().get(0);
+    List<ItemWrapper> items = new LinkedList<ItemWrapper>();
+    items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", 5, 49));
 
-		Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
-		Assert.assertEquals(4, updatedItem.getSellIn());
-		Assert.assertEquals(50, updatedItem.getQuality());
-	}
+    GildedRose app = new GildedRose(items);
+    app.updateQuality();
+    ItemWrapper updatedItem = app.getItems().get(0);
 
-	@Test
-	public void updateQualityBackstagePassesToTAFKAL80ETCConcert4Test() {
+    Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
+    Assert.assertEquals(4, updatedItem.getSellIn());
+    Assert.assertEquals(50, updatedItem.getQuality());
+  }
 
-		List<ItemWrapper> items = new LinkedList<ItemWrapper>();
-		items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", 5, 45));
+  @Test
+  public void updateQualityBackstagePassesToTAFKAL80ETCConcert4Test() {
 
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		ItemWrapper updatedItem = app.getItems().get(0);
+    List<ItemWrapper> items = new LinkedList<ItemWrapper>();
+    items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", 5, 45));
 
-		Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
-		Assert.assertEquals(4, updatedItem.getSellIn());
-		Assert.assertEquals(48, updatedItem.getQuality());
-	}
+    GildedRose app = new GildedRose(items);
+    app.updateQuality();
+    ItemWrapper updatedItem = app.getItems().get(0);
 
-	@Test
-	public void updateQualityBackstagePassesToTAFKAL80ETCConcert5Test() {
+    Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
+    Assert.assertEquals(4, updatedItem.getSellIn());
+    Assert.assertEquals(48, updatedItem.getQuality());
+  }
 
-		List<ItemWrapper> items = new LinkedList<ItemWrapper>();
-		items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", -15, 30));
+  @Test
+  public void updateQualityBackstagePassesToTAFKAL80ETCConcert5Test() {
 
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		ItemWrapper updatedItem = app.getItems().get(0);
+    List<ItemWrapper> items = new LinkedList<ItemWrapper>();
+    items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", -15, 30));
 
-		Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
-		Assert.assertEquals(-16, updatedItem.getSellIn());
-		Assert.assertEquals(0, updatedItem.getQuality());
-	}
-	
-	@Test
-	public void updateQualityAfter2DaysBackstagePassesToTAFKAL80ETCConcert1Test() {
+    GildedRose app = new GildedRose(items);
+    app.updateQuality();
+    ItemWrapper updatedItem = app.getItems().get(0);
 
-		List<ItemWrapper> items = new LinkedList<ItemWrapper>();
-		items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", 15, 20));
+    Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
+    Assert.assertEquals(-16, updatedItem.getSellIn());
+    Assert.assertEquals(0, updatedItem.getQuality());
+  }
 
-		GildedRose app = new GildedRose(items);
-		app.updateQuality(); // 1 day
-		app.updateQuality(); // 2 days
-		ItemWrapper updatedItem = app.getItems().get(0);
+  @Test
+  public void updateQualityAfter2DaysBackstagePassesToTAFKAL80ETCConcert1Test() {
 
-		Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
-		Assert.assertEquals(13, updatedItem.getSellIn());
-		Assert.assertEquals(22, updatedItem.getQuality());
-	}
+    List<ItemWrapper> items = new LinkedList<ItemWrapper>();
+    items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", 15, 20));
 
-	@Test
-	public void updateQualityAfter2DaysBackstagePassesToTAFKAL80ETCConcert2Test() {
+    GildedRose app = new GildedRose(items);
+    app.updateQuality(); // 1 day
+    app.updateQuality(); // 2 days
+    ItemWrapper updatedItem = app.getItems().get(0);
 
-		List<ItemWrapper> items = new LinkedList<ItemWrapper>();
-		items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", 10, 49));
+    Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
+    Assert.assertEquals(13, updatedItem.getSellIn());
+    Assert.assertEquals(22, updatedItem.getQuality());
+  }
 
-		GildedRose app = new GildedRose(items);
-		app.updateQuality(); // 1 day
-		app.updateQuality(); // 2 days
-		ItemWrapper updatedItem = app.getItems().get(0);
+  @Test
+  public void updateQualityAfter2DaysBackstagePassesToTAFKAL80ETCConcert2Test() {
 
-		Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
-		Assert.assertEquals(8, updatedItem.getSellIn());
-		Assert.assertEquals(50, updatedItem.getQuality());
-	}
+    List<ItemWrapper> items = new LinkedList<ItemWrapper>();
+    items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", 10, 49));
 
-	@Test
-	public void updateQualityAfter2DaysBackstagePassesToTAFKAL80ETCConcert3Test() {
+    GildedRose app = new GildedRose(items);
+    app.updateQuality(); // 1 day
+    app.updateQuality(); // 2 days
+    ItemWrapper updatedItem = app.getItems().get(0);
 
-		List<ItemWrapper> items = new LinkedList<ItemWrapper>();
-		items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", 5, 49));
+    Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
+    Assert.assertEquals(8, updatedItem.getSellIn());
+    Assert.assertEquals(50, updatedItem.getQuality());
+  }
 
-		GildedRose app = new GildedRose(items);
-		app.updateQuality(); // 1 day
-		app.updateQuality(); // 2 days
-		ItemWrapper updatedItem = app.getItems().get(0);
+  @Test
+  public void updateQualityAfter2DaysBackstagePassesToTAFKAL80ETCConcert3Test() {
 
-		Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
-		Assert.assertEquals(3, updatedItem.getSellIn());
-		Assert.assertEquals(50, updatedItem.getQuality());
-	}
+    List<ItemWrapper> items = new LinkedList<ItemWrapper>();
+    items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", 5, 49));
 
-	@Test
-	public void updateQualityAfter2DaysBackstagePassesToTAFKAL80ETCConcert4Test() {
+    GildedRose app = new GildedRose(items);
+    app.updateQuality(); // 1 day
+    app.updateQuality(); // 2 days
+    ItemWrapper updatedItem = app.getItems().get(0);
 
-		List<ItemWrapper> items = new LinkedList<ItemWrapper>();
-		items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", 5, 45));
+    Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
+    Assert.assertEquals(3, updatedItem.getSellIn());
+    Assert.assertEquals(50, updatedItem.getQuality());
+  }
 
-		GildedRose app = new GildedRose(items);
-		app.updateQuality(); // 1 day
-		app.updateQuality(); // 2 days
-		ItemWrapper updatedItem = app.getItems().get(0);
+  @Test
+  public void updateQualityAfter2DaysBackstagePassesToTAFKAL80ETCConcert4Test() {
 
-		Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
-		Assert.assertEquals(3, updatedItem.getSellIn());
-		Assert.assertEquals(50, updatedItem.getQuality());
-	}
+    List<ItemWrapper> items = new LinkedList<ItemWrapper>();
+    items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", 5, 45));
 
-	@Test
-	public void updateQualityAfter2DaysBackstagePassesToTAFKAL80ETCConcert5Test() {
+    GildedRose app = new GildedRose(items);
+    app.updateQuality(); // 1 day
+    app.updateQuality(); // 2 days
+    ItemWrapper updatedItem = app.getItems().get(0);
 
-		List<ItemWrapper> items = new LinkedList<ItemWrapper>();
-		items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", -15, 30));
+    Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
+    Assert.assertEquals(3, updatedItem.getSellIn());
+    Assert.assertEquals(50, updatedItem.getQuality());
+  }
 
-		GildedRose app = new GildedRose(items);
-		app.updateQuality(); // 1 day
-		app.updateQuality(); // 2 days
-		ItemWrapper updatedItem = app.getItems().get(0);
+  @Test
+  public void updateQualityAfter2DaysBackstagePassesToTAFKAL80ETCConcert5Test() {
 
-		Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
-		Assert.assertEquals(-17, updatedItem.getSellIn());
-		Assert.assertEquals(0, updatedItem.getQuality());
-	}
-	
+    List<ItemWrapper> items = new LinkedList<ItemWrapper>();
+    items.add(factory.create("Backstage passes to a TAFKAL80ETC concert", -15, 30));
+
+    GildedRose app = new GildedRose(items);
+    app.updateQuality(); // 1 day
+    app.updateQuality(); // 2 days
+    ItemWrapper updatedItem = app.getItems().get(0);
+
+    Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert", updatedItem.getName());
+    Assert.assertEquals(-17, updatedItem.getSellIn());
+    Assert.assertEquals(0, updatedItem.getQuality());
+  }
+
 }
